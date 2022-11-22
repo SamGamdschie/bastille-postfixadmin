@@ -1,4 +1,4 @@
-PKG nginx php82 postfixadmin-php82
+PKG nginx htop php82 postfixadmin-php82
 
 #CP root /
 CMD mkdr -p /www/certificates 
