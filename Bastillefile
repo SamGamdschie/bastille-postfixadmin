@@ -16,9 +16,12 @@ CMD rm -rf /usr/local/etc/nginx/nginx.conf
 CMD ln -s /usr/local/etc/git_config/nginx/postfix.conf /usr/local/etc/nginx/nginx.conf
 CMD ln -s /usr/local/etc/git_config/php/postfix.conf /usr/local/etc/php-fpm.d/postfix.conf
 
-#Create additional Dirs
+#Create additional Dirs for TMP / Session
 CMD mkdir -p /www/vhosts
-CMD chown www:www /www/vhosts
+CMD mkdir -p /www/vhosts/tmp
+CMD mkdir -p /www/vhosts/sessions
+CMD mkdir -p /www/vhosts/upload_tmp
+CMD chown -R www:www /www/vhosts
 
 SYSRC php_fpm_enable=YES
 SYSRC nginx_enable=YES
