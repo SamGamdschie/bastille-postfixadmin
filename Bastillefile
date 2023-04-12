@@ -18,20 +18,14 @@ MOUNT /werzel/server_config/postfixadmin usr/local/etc/git_config/postfixadmin n
 CMD rm -rf /usr/local/etc/nginx/nginx.conf
 CMD ln -s /usr/local/etc/git_config/nginx/postfix.conf /usr/local/etc/nginx/nginx.conf
 CMD ln -s /usr/local/etc/git_config/php/postfix.conf /usr/local/etc/php-fpm.d/postfix.conf
-CMD ln -s /usr/local/etc/git_config/postfixadmin/config.local.php /usr/local/www/postfixadmin/config.local.php
-CMD chown www:www /usr/local/www/postfixadmin/config.local.php
+CMD ln -s /usr/local/etc/git_config/postfixadmin/config.local.php /usr/local/www/postfixadmin33/config.local.php
+#CMD chown www:www /usr/local/www/postfixadmin/config.local.php
 # Now Dovecot Configuration as Link
 CMD ln -s /usr/local/etc/git_config/dovecot/conf.d /usr/local/etc/dovecot/conf.d 
 CMD ln -s /usr/local/etc/git_config/dovecot/dovecot_postfixadmin.conf /usr/local/etc/dovecot/dovecot.conf 
 CMD ln -s /usr/local/etc/git_config/dovecot/sql.conf.ext /usr/local/etc/dovecot/sql.conf.ext
 
 #Create additional Dirs for TMP / Session
-CMD mkdir -p /www/vhosts
-CMD mkdir -p /www/vhosts/tmp
-CMD mkdir -p /www/vhosts/sessions
-CMD mkdir -p /www/vhosts/upload_tmp
-CMD chown -R www:www /www/vhosts
-
 CMD mkdir -p /www/vhosts
 CMD mkdir -p /www/vhosts/tmp
 CMD mkdir -p /www/vhosts/sessions
