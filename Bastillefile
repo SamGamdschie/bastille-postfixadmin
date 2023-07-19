@@ -1,7 +1,9 @@
 ARG php-version=82
 ARG mailip=10.0.0.10
 
-PKG nginx htop php${php-version} postfixadmin-php${php-version} php${php-version}-mysqli php${php-version}-pdo_mysql dovecot
+PKG nginx htop 
+PKG php${php-version} php${php-version}-extensions php${php-version}-mysqli php${php-version}-pdo_mysql dovecot
+PKG postfixadmin-php${php-version} dovecot
 
 #CP root /
 CMD mkdir -p /www/certificates 
